@@ -11,10 +11,6 @@ use DefStudio\Telegraph\Keyboard\Keyboard;
 
 class Handler extends WebhookHandler
 {
-    public function hello(string $name): void
-    {
-        $this->reply('Привет, '.$name.'! Это твой первый бот на Laravel');
-    }
 
     public function categories(): void
     {
