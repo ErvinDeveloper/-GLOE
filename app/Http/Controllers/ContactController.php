@@ -7,8 +7,9 @@ use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
-    public function __invoke(ContactRequest $request): ?array
+    public function __invoke(ContactRequest $request): void
     {
-        return event(new SendMessageFromContactForm($request->validated()));
+        dispatch(new SendMessageFromContactForm($request->validated()));
+        //return event(new SendMessageFromContactForm($request->validated()));
     }
 }

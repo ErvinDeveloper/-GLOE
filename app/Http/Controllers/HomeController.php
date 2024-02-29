@@ -6,6 +6,7 @@ use App\Repository\CategoryRepository;
 use App\Repository\NewsRepository;
 use App\Repository\PostRepository;
 use Illuminate\View\View;
+use NotificationChannels\Telegram\TelegramUpdates;
 
 class HomeController extends Controller
 {

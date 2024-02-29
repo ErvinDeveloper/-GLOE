@@ -17,38 +17,12 @@ class ContactUs extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public $data)
+    public function __construct(public array $data)
     {
     }
 
-    /**
-     * Get the message envelope.
-     */
-    public function envelope(): Envelope
+    public function build(): ContactUs
     {
-        return new Envelope(
-            subject: 'Contact Us',
-            from: new Address('yourmail@gmail.com', 'Acme Midia')
-        );
-    }
-
-    /**
-     * Get the message content definition.
-     */
-    public function content(): Content
-    {
-        return new Content(
-            markdown: 'emails.contact',
-        );
-    }
-
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
-    public function attachments(): array
-    {
-        return [];
+        return $this->markdown('emails.contact');
     }
 }
